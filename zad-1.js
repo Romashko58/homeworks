@@ -22,4 +22,9 @@ let userNameNumber = +userName;
 let userNameNumber2 = parseInt(userName);
 console.log(userNameNumber, typeof (userNameNumber));
 console.log(userNameNumber2, typeof (userNameNumber2));
+//zad4
+let a = 1;
+let b = 2;
+let c = 'белых медведей';
+console.log(a.toString() + b.toString() + ' ' + c)
 
