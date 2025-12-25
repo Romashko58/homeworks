@@ -35,4 +35,11 @@ let fourthWord = 'попрек';
 let fifthWord = 'рубило';
 let lengthWords = firstWord.length + secondWord.length + thirdWord.length + fourthWord.length + fifthWord.length;
 console.log(lengthWords);
+//zad6
+let num = 77;
+let und;
+let str = 'ggg';
+console.log(`Variable: num have type: ${typeof num}`);
+console.log(`Variable: und have type: ${typeof und}`);
+console.log(`Variable: str have type: ${typeof str}`);
 
