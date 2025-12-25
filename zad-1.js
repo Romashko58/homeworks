@@ -42,4 +42,16 @@ let str = 'ggg';
 console.log(`Variable: num have type: ${typeof num}`);
 console.log(`Variable: und have type: ${typeof und}`);
 console.log(`Variable: str have type: ${typeof str}`);
-
+//zad7
+let name = prompt('Ваше имя');
+let age = prompt('Ваш возраст');
+console.log(name);
+console.log(age);
+//zad2(advanced level)
+let codeWord1 = "обернись";
+let codeWord2 = "неужели";
+let codeWord3 = "огурцы";
+let codeWord4 = "липкие";
+let codeWord5 = "?!";
+let cipher = codeWord1[1] + codeWord2[1] + codeWord3[1] + codeWord4[1] + codeWord5[1];
+console.log(cipher);
