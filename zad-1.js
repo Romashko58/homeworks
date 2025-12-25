@@ -27,4 +27,12 @@ let a = 1;
 let b = 2;
 let c = 'белых медведей';
 console.log(a.toString() + b.toString() + ' ' + c)
+//zad5
+let firstWord = 'доступ';
+let secondWord = 'морпех';
+let thirdWord = 'наледь';
+let fourthWord = 'попрек';
+let fifthWord = 'рубило';
+let lengthWords = firstWord.length + secondWord.length + thirdWord.length + fourthWord.length + fifthWord.length;
+console.log(lengthWords);
 
