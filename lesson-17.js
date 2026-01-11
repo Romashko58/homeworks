@@ -24,4 +24,12 @@ for (let i = 1; i < 20; i++) {
       console.log(i);
    }
 }
+//zad4
+const key = true;
+const documents = true;
+const pen = true;
+const apple = false;
+const orange = true;
+const shouldGoToWork = pen ?? documents ?? pen ?? (apple || orange);
+console.log(shouldGoToWork);
 
