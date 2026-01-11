@@ -46,4 +46,15 @@ else if (chislo % 3 === 0) {
 else {
    alert(':(');
 }
+//zad6
+const age = prompt('Ваш возраст');
+if (age > 18) {
+   alert('попей пивка');
+}
+else if (age >= 16 && age <= 18) {
+   alert('Можешь выкурить сигаретку, только маме не говори');
+}
+else {
+   alert('пей колу');
+}
 
