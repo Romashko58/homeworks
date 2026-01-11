@@ -9,3 +9,12 @@ console.log(typeof (b));
 console.log(typeof (c));
 console.log(typeof (d));
 console.log(typeof (e));
+//zad2
+const height = 15;
+const width = 2;
+if (height > width) {
+   console.log(height);
+}
+else {
+   console.log(width);
+}
