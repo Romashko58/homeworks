@@ -76,3 +76,9 @@ switch (sideOfTheWorld) {
    default:
       console.log("попробуйте ещё раз");
 }
+//zad3(advanced level)
+let steps = 6;
+for (let i = 1; i <= steps; i++) {
+   let step = "#".repeat(i);
+   console.log(step);
+}
