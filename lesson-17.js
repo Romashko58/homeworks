@@ -30,7 +30,7 @@ const documents = true;
 const pen = true;
 const apple = false;
 const orange = true;
-const shouldGoToWork = pen ?? documents ?? pen ?? (apple || orange);
+const shouldGoToWork = pen && documents && pen && (apple || orange);
 console.log(shouldGoToWork);
 //zad5
 const chislo = prompt('Введите число');
