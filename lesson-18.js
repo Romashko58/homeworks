@@ -19,5 +19,16 @@ function overpaymentByCredit(sum, percent) {
    return res;
 }
 console.log(overpaymentByCredit(6000, 0.17))
+//task3
+function trimString(string, from, to) {
+   let str = '';
+   for (let i = 0; i < string.length; i++) {
+      if (i >= from & i <= to) {
+         str += string[i];
+      }
+   }
+   return str;
+}
+console.log(trimString('string', 0, 4))
 
 
