@@ -52,3 +52,20 @@ function polindrom(word) {
 
 }
 console.log(polindrom('топот'))
+//task2(advanced level)
+const matrix = [
+   [12, 98, 78, 65, 23],
+   [54, 76, 98, 43, 65],
+   [13, 324, 65, 312],
+   [9092, 22, 45, 90000],
+]
+let sum = 0;
+let count = 0;
+for (const numArr of matrix) {
+   for (const num of numArr) {
+      sum += num;
+      count++
+   }
+}
+const res = sum / count;
+console.log(res);
