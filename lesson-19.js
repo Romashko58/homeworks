@@ -76,3 +76,19 @@ let student2 = {
    age: 27,
 }
 console.log(JSON.stringify(student1) === JSON.stringify(student2));
+//task3(advanced level)
+const animals = {
+   cat: {
+      name: 'Енчик',
+      age: 3,
+   },
+   dog: {
+      name: 'Орео',
+      age: 2,
+   },
+}
+let birdName;
+if (animals.bird) {
+   birdName = animals.bird.name;
+}
+console.log(birdName);
