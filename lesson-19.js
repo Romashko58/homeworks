@@ -16,3 +16,17 @@ if ('name' in person) {
    console.log(true);
 }
 
+//task3
+const student = {
+   name: 'John',
+   age: 19,
+   isHappy: true
+}
+let keyStudent = '';
+let valueStudent = '';
+for (const key in student) {
+   keyStudent += key + ' ';
+   valueStudent += student[key] + ' ';
+}
+console.log(keyStudent);
+console.log(valueStudent);
