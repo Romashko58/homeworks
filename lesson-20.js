@@ -69,3 +69,17 @@ for (const numArr of matrix) {
 }
 const res = sum / count;
 console.log(res);
+//task3(advanced level)
+const negativeNumbers = [];
+const positiveNumbers = [];
+const mixedNumbers = [-14, 24, -89, 43, 0, -1, 412, 4]
+for (const num of mixedNumbers) {
+   if (num >= 0) {
+      positiveNumbers.push(num);
+   }
+   if (num < 0) {
+      negativeNumbers.push(num);
+   }
+}
+console.log(positiveNumbers);
+console.log(negativeNumbers);
