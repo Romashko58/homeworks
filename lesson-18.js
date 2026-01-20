@@ -54,5 +54,21 @@ function getSum(a, b) {
 console.log(getSum(-1, 5));
 console.log(getSum(1, 1));
 console.log(getSum(-2, 2));
-
+//task6
+function foo() {
+   console.log("foo");
+}
+function boo() {
+   console.log("boo");
+}
+function fooBoo(boolean, fooFunction, booFunction) {
+   if (boolean === true) {
+      fooFunction();
+   }
+   else {
+      booFunction();
+   }
+}
+fooBoo(true, foo, boo);
+fooBoo(false, foo, boo);
 
