@@ -32,3 +32,7 @@ const oddNumbers = [1, 3, 5, 7, 9]
 const allNumbers = evenNumbers.concat(oddNumbers);
 const index = allNumbers.indexOf(8);
 console.log(index);
+//task7
+const binary = [0, 0, 0, 0]
+const binaryString = binary.join('1');
+console.log(binaryString);
