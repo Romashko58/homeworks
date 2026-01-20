@@ -53,3 +53,16 @@ for (const key in salaries) {
    averageSalary += salaries[key];
 }
 console.log(averageSalary);
+//task6
+const login = prompt('Введите логин');
+const password = prompt('Введите пароль');
+const obj = {
+   login: login,
+   password: password,
+};
+const res = confirm(`Если данные верны, нажмите "Ок". 
+   Логин: ${obj.login}
+   Пароль: ${obj.password}`);
+if (res) {
+   console.log('Добро пожаловать');
+}
