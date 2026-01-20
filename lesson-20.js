@@ -11,3 +11,10 @@ console.log(numbers);
 const numbers1 = [5, 43, 63, 23, 90];
 numbers1.length = 0;
 console.log(numbers1);
+//task4
+const students = ['Polina', 'Dasha', 'Masha']
+students.pop();
+students.push('Borya');
+students.shift();
+students.unshift('Andrey');
+console.log(students);
