@@ -40,5 +40,19 @@ function getSumNumbers(num) {
    return sumNumbers;
 }
 console.log(getSumNumbers(2021))
+//task5
+function getSum(a, b) {
+   if (a === b) return a;
+   let sumNum = 0;
+   let minNum = Math.min(a, b);
+   let maxNum = Math.max(a, b);
+   for (let i = minNum; i <= maxNum; i++) {
+      sumNum += i;
+   }
+   return sumNum;
+}
+console.log(getSum(-1, 5));
+console.log(getSum(1, 1));
+console.log(getSum(-2, 2));
 
 
