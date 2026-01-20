@@ -40,3 +40,16 @@ const colors = {
 }
 console.log(colors["ru pum pu ru rum"].red);
 console.log(colors["ru pum pu ru rum"].blue);
+//task5
+let averageSalary = 0;
+const salaries = {
+   andrey: 500,
+   sveta: 413,
+   anton: 987,
+   igor: 664,
+   alexandra: 199
+}
+for (const key in salaries) {
+   averageSalary += salaries[key];
+}
+console.log(averageSalary);
