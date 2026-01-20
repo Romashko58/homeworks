@@ -30,5 +30,15 @@ function trimString(string, from, to) {
    return str;
 }
 console.log(trimString('string', 0, 4))
+//task4
+function getSumNumbers(num) {
+   let sumNumbers = 0;
+   const numString = num + '';
+   for (let i = 0; i < numString.length; i++) {
+      sumNumbers += Number(numString[i]);
+   }
+   return sumNumbers;
+}
+console.log(getSumNumbers(2021))
 
 
