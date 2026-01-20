@@ -30,3 +30,13 @@ for (const key in student) {
 }
 console.log(keyStudent);
 console.log(valueStudent);
+//task4
+const colors = {
+   'ru pum pu ru rum': {
+      red: 'красный',
+      green: 'зеленый',
+      blue: 'синий'
+   },
+}
+console.log(colors["ru pum pu ru rum"].red);
+console.log(colors["ru pum pu ru rum"].blue);
