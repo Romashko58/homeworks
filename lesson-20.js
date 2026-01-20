@@ -26,3 +26,9 @@ for (let i = 0; i < cats.length; i++) {
 for (const cat of cats) {
    console.log(cat);
 }
+//task6
+const evenNumbers = [2, 4, 6, 8, 10]
+const oddNumbers = [1, 3, 5, 7, 9]
+const allNumbers = evenNumbers.concat(oddNumbers);
+const index = allNumbers.indexOf(8);
+console.log(index);
