@@ -36,3 +36,19 @@ console.log(index);
 const binary = [0, 0, 0, 0]
 const binaryString = binary.join('1');
 console.log(binaryString);
+//task1(advanced level)
+function polindrom(word) {
+   let arr = []
+   for (let i = 0; i < word.length; i++) {
+      arr.push(word[i]);
+   }
+   const reversArr = arr.slice().reverse();
+   if (JSON.stringify(arr) === JSON.stringify(reversArr)) {
+      return true;
+   }
+   else {
+      return false;
+   }
+
+}
+console.log(polindrom('топот'))
