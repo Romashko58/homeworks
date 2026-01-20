@@ -66,3 +66,13 @@ const res = confirm(`Если данные верны, нажмите "Ок".
 if (res) {
    console.log('Добро пожаловать');
 }
+//task2(advanced level)
+let student1 = {
+   name: 'Polina',
+   age: 27,
+}
+let student2 = {
+   name: 'Polina',
+   age: 27,
+}
+console.log(JSON.stringify(student1) === JSON.stringify(student2));
