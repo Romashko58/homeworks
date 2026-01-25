@@ -86,8 +86,8 @@ const animals = {
       age: 2,
    },
 }
-let birdName;
-if (animals.bird) {
-   birdName = animals.bird.name;
+const key = prompt('Введите животное');
+
+if (key in animals) {
+   console.log(animals[key].name);
 }
-console.log(birdName);
