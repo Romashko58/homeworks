@@ -22,14 +22,9 @@ const student = {
    age: 19,
    isHappy: true
 }
-let keyStudent = '';
-let valueStudent = '';
 for (const key in student) {
-   keyStudent += key + ' ';
-   valueStudent += student[key] + ' ';
+   console.log(key + ': ' + student[key]);
 }
-console.log(keyStudent);
-console.log(valueStudent);
 //task4
 const colors = {
    'ru pum pu ru rum': {
@@ -41,7 +36,8 @@ const colors = {
 console.log(colors["ru pum pu ru rum"].red);
 console.log(colors["ru pum pu ru rum"].blue);
 //task5
-let averageSalary = 0;
+let totalSalary = 0;
+let col = 0;
 const salaries = {
    andrey: 500,
    sveta: 413,
@@ -49,9 +45,12 @@ const salaries = {
    igor: 664,
    alexandra: 199
 }
+
 for (const key in salaries) {
-   averageSalary += salaries[key];
+   col++;
+   totalSalary += salaries[key];
 }
+const averageSalary = totalSalary / col;
 console.log(averageSalary);
 //task6
 const login = prompt('Введите логин');
