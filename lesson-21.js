@@ -34,3 +34,11 @@ const result1 = fibonacci2.reduce(function (acc, number) {
    return acc + number;
 }, 0);
 console.log(result1);
+//task5
+const numbers2 = [5, 9, 13, 24, 54, 10, 13, 99, 1, 5];
+const numberFind = numbers2.find(num => num % 2 === 0);
+console.log(numberFind);
+
+const numberFind1 = numbers2.find(function (num) {
+   return num % 2 === 0;
+});
