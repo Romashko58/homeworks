@@ -6,4 +6,13 @@ fibonacci.forEach(function (item) {
 fibonacci.forEach(item => {
    console.log(item);
 });
+//task2
 const users = ['Darya', 'Masha', 'Denis', 'Vitaliy', 'Polina', 'Anton'];
+const newUsers = users.map((element, index) => `member ${index + 1}: ${element}`);
+console.log(newUsers);
+
+const newUsers2 = users.map(function (element, index) {
+   return `member ${index + 1}: ${element}`;
+
+});
+console.log(newUsers2);
