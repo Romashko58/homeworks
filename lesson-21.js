@@ -16,3 +16,12 @@ const newUsers2 = users.map(function (element, index) {
 
 });
 console.log(newUsers2);
+//task3
+const numbers1 = [7, -4, 32, -90, 54, 32, -21];
+const newNumbers1 = numbers1.filter(num => num > 0);
+console.log(newNumbers1);
+
+const newNumbers2 = numbers1.filter(function (num) {
+   return num > 0;
+});
+console.log(newNumbers2);
