@@ -25,3 +25,12 @@ const newNumbers2 = numbers1.filter(function (num) {
    return num > 0;
 });
 console.log(newNumbers2);
+//task4
+const fibonacci2 = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987];
+const result = fibonacci2.reduce((acc, number) => acc + number, 0);
+console.log(result);
+
+const result1 = fibonacci2.reduce(function (acc, number) {
+   return acc + number;
+}, 0);
+console.log(result1);
