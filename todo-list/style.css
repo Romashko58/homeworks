@@ -1,0 +1,179 @@
+@font-face {
+   font-family: "Fraunces";
+   src: url("../fonts/Fraunces_72pt-Regular.ttf");
+   font-style: normal;
+   font-display: swap;
+   font-weight: 400;
+}
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+
+}
+
+body {
+   background-color: #f1e7e1;
+}
+
+#root {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+}
+
+.enter {
+   display: flex;
+   gap: 50px;
+   margin-top: 50px;
+}
+
+.show {
+   display: flex;
+   gap: 45px;
+   margin-top: 30px;
+   align-items: center;
+}
+
+.input {
+   height: 50px;
+   width: 500px;
+   border: solid 2px #545151;
+   border-radius: 6px;
+   font: 18px/10px "Fraunces", sans-serif;
+   letter-spacing: 0.2px;
+   color: #221d1d;
+}
+
+.search-input {
+   width: 310px;
+}
+
+.button {
+   height: 50px;
+   width: 115px;
+   background-color: #ef9c6c;
+   border: solid 2px #545151;
+   border-radius: 6px;
+   font: 18px/10px "Fraunces", sans-serif;
+   letter-spacing: 0.2px;
+   color: #ffffff;
+
+   &:active {
+      background-color: #f58c4f;
+      color: #ffffff;
+   }
+}
+
+.show-btn {
+   width: 160px;
+}
+
+.spanStats {
+   font: 18px/10px "Fraunces", sans-serif;
+   letter-spacing: 0.2px;
+   color: #545151;
+}
+
+.todoElement {
+   padding: 20px;
+   margin-top: 60px;
+   width: 700px;
+   background-color: #f1e7e1;
+   border: solid 2px #545151;
+   border-radius: 6px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 30px;
+}
+
+.custom-checkbox input {
+   display: none;
+}
+
+
+.custom-checkbox {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   cursor: pointer;
+}
+
+
+.custom-checkbox .checkmark {
+   width: 50px;
+   height: 35px;
+   background-color: #f4a374;
+   border: solid 2px #545151;
+   border-radius: 6px;
+   position: relative;
+   transition: all 0.2s;
+}
+
+
+.custom-checkbox .checkmark::after {
+   content: '';
+   position: absolute;
+   width: 10px;
+   height: 6px;
+   border-left: 2px solid #ffffff;
+   border-bottom: 2px solid #ffffff;
+   transform: rotate(-45deg);
+   top: 10px;
+   left: 17px;
+   opacity: 0;
+   transition: opacity 0.2s;
+}
+
+
+.custom-checkbox input:checked+.checkmark::after {
+   opacity: 1;
+}
+
+.todoText {
+   padding: 20px;
+   text-align: center;
+   background-color: #ffffff;
+   width: 450px;
+   height: 50px;
+   border-radius: 6px;
+
+}
+
+.text {
+   font: 18px/10px "Fraunces", sans-serif;
+   letter-spacing: 0.2px;
+   color: #221d1d;
+
+}
+
+.closeDiv {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+   gap: 30px;
+
+}
+
+.close-btn {
+   width: 50px;
+   height: 35px;
+}
+
+.dateDiv {
+   padding: 8px;
+   text-align: center;
+   background-color: #ffffff;
+
+   border-radius: 6px;
+}
+
+.date {
+   font: 18px/10px "Fraunces", sans-serif;
+   letter-spacing: 0.2px;
+   color: #221d1d;
+}
