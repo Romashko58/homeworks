@@ -164,15 +164,11 @@ body {
    height: 35px;
 }
 
-.dateDiv {
+.date {
    padding: 8px;
    text-align: center;
    background-color: #ffffff;
-
    border-radius: 6px;
-}
-
-.date {
    font: 18px/10px "Fraunces", sans-serif;
    letter-spacing: 0.2px;
    color: #221d1d;
