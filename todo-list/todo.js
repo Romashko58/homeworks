@@ -12,44 +12,44 @@ function createDomElement(tagName, atributes = {}, textContent = '') {
 
 const divRoot = document.getElementById('root');
 const fragment = document.createDocumentFragment();
-const managementElements = createElementTodo('div', { className: 'enter' });
-const btnDeleteAll = createElementTodo('button', { className: 'button' }, 'Delete All');
-const btnDeleteLast = createElementTodo('button', { className: 'button' }, 'Delete Last');
-const inputEnterTodo = createElementTodo('input', { className: 'input' },)
+const managementElements = createDomElement('div', { className: 'enter' });
+const btnDeleteAll = createDomElement('button', { className: 'button' }, 'Delete All');
+const btnDeleteLast = createDomElement('button', { className: 'button' }, 'Delete Last');
+const inputEnterTodo = createDomElement('input', { className: 'input' },)
 inputEnterTodo.placeholder = 'Enter todo ...';
-const btnAdd = createElementTodo('button', { className: 'button' }, 'Add');
+const btnAdd = createDomElement('button', { className: 'button' }, 'Add');
 managementElements.append(btnDeleteAll, btnDeleteLast, inputEnterTodo, btnAdd);
 
-const filterElements = createElementTodo('div', { className: 'show' });
-const todoAll = createElementTodo('span', { className: 'spanStats' }, 'All: ');
-const allNumber = createElementTodo('span', {}, '0');
+const filterElements = createDomElement('div', { className: 'show' });
+const todoAll = createDomElement('span', { className: 'spanStats' }, 'All: ');
+const allNumber = createDomElement('span', {}, '0');
 todoAll.append(allNumber);
 
-const todoCompleted = createElementTodo('span', { className: 'spanStats' }, 'Completed: ');
-const completedNumber = createElementTodo('span', {}, '0');
+const todoCompleted = createDomElement('span', { className: 'spanStats' }, 'Completed: ');
+const completedNumber = createDomElement('span', {}, '0');
 todoCompleted.append(completedNumber);
-const btnShowAll = createElementTodo('button', { className: 'button show-btn' }, 'Show All');
-const btnShowCompleted = createElementTodo('button', { className: 'button show-btn' }, 'Show Completed');
-const inputSearchTodo = createElementTodo('input', { className: 'input search-input' });
+const btnShowAll = createDomElement('button', { className: 'button show-btn' }, 'Show All');
+const btnShowCompleted = createDomElement('button', { className: 'button show-btn' }, 'Show Completed');
+const inputSearchTodo = createDomElement('input', { className: 'input search-input' });
 inputSearchTodo.placeholder = 'Search ...';
 filterElements.append(todoAll, todoCompleted, btnShowAll, btnShowCompleted, inputSearchTodo);
 
 
 
 function createTodoItem(textContent, dateContent, idContent) {
-   const todoElement = createElementTodo('div', { className: 'todoElement' });
-   const label = createElementTodo('label', { className: 'custom-checkbox' });
-   const checkbox = createElementTodo('input', {});
+   const todoElement = createDomElement('div', { className: 'todoElement' });
+   const label = createDomElement('label', { className: 'custom-checkbox' });
+   const checkbox = createDomElement('input', {});
    checkbox.type = 'checkbox';
-   const checkmark = createElementTodo('span', { className: 'checkmark' });
+   const checkmark =createDomElement('span', { className: 'checkmark' });
    label.append(checkbox, checkmark);
 
-   const todoText = createElementTodo('div', { className: 'todoText' });
-   const text = createElementTodo('p', { className: 'text' }, textContent);
+   const todoText = createDomElement('div', { className: 'todoText' });
+   const text = createDomElement('p', { className: 'text' }, textContent);
    todoText.append(text);
-   const div = createElementTodo('div', { className: 'closeDiv' });
-   const closeBtn = createElementTodo('button', { className: 'button close-btn' }, 'X');
-   const date = createElementTodo('p', { className: 'date' }, dateContent);
+   const div = createDomElement('div', { className: 'closeDiv' });
+   const closeBtn = createDomElement('button', { className: 'button close-btn' }, 'X');
+   const date = createDomElement('p', { className: 'date' }, dateContent);
    todoElement.dataset.id = idContent;
    div.append(closeBtn, date);
    todoElement.append(label, todoText, div);
