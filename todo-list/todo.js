@@ -1,4 +1,4 @@
-function createElementTodo(tagName, atributes = {}, textContent = '') {
+function createDomElement(tagName, atributes = {}, textContent = '') {
    const element = document.createElement(tagName);
    if (atributes.className) {
       element.className = atributes.className;
