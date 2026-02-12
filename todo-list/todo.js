@@ -161,3 +161,11 @@ btnShowCompleted.addEventListener('click', () => {
    render();
 
 });
+
+let searchTodo = '';
+inputSearchTodo.addEventListener('input', () => {
+   filterTodo = 'search';
+   searchTodo = inputSearchTodo.value.toLowerCase();
+   render();
+
+});
