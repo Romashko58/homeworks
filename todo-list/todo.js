@@ -41,7 +41,7 @@ function createTodoItem(textContent, dateContent, idContent) {
    const label = createDomElement('label', { className: 'custom-checkbox' });
    const checkbox = createDomElement('input', {});
    checkbox.type = 'checkbox';
-   const checkmark =createDomElement('span', { className: 'checkmark' });
+   const checkmark = createDomElement('span', { className: 'checkmark' });
    label.append(checkbox, checkmark);
 
    const todoText = createDomElement('div', { className: 'todoText' });
@@ -59,3 +59,32 @@ function createTodoItem(textContent, dateContent, idContent) {
 const todoListContainer = createElementTodo('div', { className: 'todoListContainer' });
 fragment.append(managementElements, filterElements, todoListContainer);
 divRoot.append(fragment);
+
+let filterTodo = 'all';
+let todos = [];
+
+function render() {
+   todoListContainer.innerHTML = '';
+
+   let arrTodo = todos;
+   if (filterTodo === 'completed') {
+      arrTodo = todos.filter(todo => todo.checked === true)
+   }
+   if (filterTodo === 'search') {
+      arrTodo = todos.filter(todo => { return todo.text.toLowerCase().includes(searchTodo) });
+   }
+   arrTodo.forEach(item => {
+      const element = createTodoItem(item.text, item.date, item.id);
+      if (item.checked) {
+         element.querySelector('input').checked = true;
+         element.querySelector('.text').classList.add('completed');
+         element.classList.add('completedTodo');
+      }
+      todoListContainer.append(element);
+   });
+
+
+   allNumber.textContent = todos.length;
+   completedNumber.textContent = todos.filter(t => t.checked).length;
+
+}
