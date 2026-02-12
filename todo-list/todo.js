@@ -56,7 +56,7 @@ function createTodoItem(textContent, dateContent, idContent) {
    return todoElement;
 }
 
-const todoListContainer = createElementTodo('div', { className: 'todoListContainer' });
+const todoListContainer = createDomElement('div', { className: 'todoListContainer' });
 fragment.append(managementElements, filterElements, todoListContainer);
 divRoot.append(fragment);
 
@@ -113,3 +113,10 @@ btnAdd.addEventListener('click', () => {
    inputEnterTodo.value = '';
 
 })
+
+
+btnDeleteAll.addEventListener('click', () => {
+   todos.splice(0, todos.length);
+   render();
+})
+
