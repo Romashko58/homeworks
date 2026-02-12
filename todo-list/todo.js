@@ -88,3 +88,28 @@ function render() {
    completedNumber.textContent = todos.filter(t => t.checked).length;
 
 }
+
+let maxId = 0;
+for (let i = 0; i < todos.length; i++) {
+   if (todos[i].id > maxId) {
+      maxId = todos[i].id;
+   }
+}
+
+let id = maxId + 1;
+btnAdd.addEventListener('click', () => {
+
+   const text = inputEnterTodo.value;
+   if (!text) return;
+   todos.push({
+      id: id++,
+      text,
+      date: new Date().toLocaleDateString(),
+      checked: false,
+
+   }
+   )
+   render();
+   inputEnterTodo.value = '';
+
+})
