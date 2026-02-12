@@ -150,3 +150,8 @@ btnDeleteLast.addEventListener('click', () => {
    todos.pop();
    render();
 });
+
+btnShowAll.addEventListener('click', () => {
+   filterTodo = 'all';
+   render();
+});
