@@ -155,3 +155,9 @@ btnShowAll.addEventListener('click', () => {
    filterTodo = 'all';
    render();
 });
+
+btnShowCompleted.addEventListener('click', () => {
+   filterTodo = 'completed';
+   render();
+
+});
