@@ -120,3 +120,13 @@ btnDeleteAll.addEventListener('click', () => {
    render();
 })
 
+todoListContainer.addEventListener('click', (e) => {
+   if (e.target.classList.contains('close-btn')) {
+      const todoBlock = e.target.closest('.todoElement');
+      const deleteId = todoBlock.dataset.id;
+      todos = todos.filter(todo => todo.id != deleteId)
+      render();
+   }
+
+});
+
