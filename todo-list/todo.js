@@ -145,3 +145,8 @@ todoListContainer.addEventListener('change', (e) => {
       render();
    }
 });
+
+btnDeleteLast.addEventListener('click', () => {
+   todos.pop();
+   render();
+});
