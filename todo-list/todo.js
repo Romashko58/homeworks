@@ -130,3 +130,18 @@ todoListContainer.addEventListener('click', (e) => {
 
 });
 
+todoListContainer.addEventListener('change', (e) => {
+   if (e.target.type === 'checkbox') {
+      const todoBlock = e.target.closest('.todoElement');
+      const changeId = todoBlock.dataset.id;
+      todos.forEach(todo => {
+         if (todo.id == changeId) {
+            todo.checked = e.target.checked;
+
+         }
+
+      });
+
+      render();
+   }
+});
