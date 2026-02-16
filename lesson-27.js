@@ -11,27 +11,26 @@ class Developer {
 
 }
 class Frontend extends Developer {
-   constructor(name) {
-      super();
-      this.name = name;
+   constructor(name, website) {
+      super(name);
+      this.website = website;
    }
-   buildWebSite(website) {
-      return `${this.name} start build website ${website}`
+   buildWebSite() {
+      return `${this.name} start build website ${this.website}`
    }
 }
 class Backend extends Developer {
    constructor(name) {
-      super();
-      this.name = name;
+      super(name);
    }
-   buildServer(website) {
+   buildServer() {
       return `${this.name} start build server`
    }
 }
-const firstDeveloper = new Frontend('John');
+const firstDeveloper = new Frontend('John', 'Chrome');
 const secondDeveloper = new Backend('Nastya');
 console.log(firstDeveloper.startWork());
-console.log(firstDeveloper.buildWebSite('Chrome'));
+console.log(firstDeveloper.buildWebSite());
 console.log(firstDeveloper.endWork());
 console.log(secondDeveloper.startWork());
 console.log(secondDeveloper.buildServer());
