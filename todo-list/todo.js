@@ -60,19 +60,10 @@ const todoListContainer = createDomElement('div', { className: 'todoListContaine
 fragment.append(managementElements, filterElements, todoListContainer);
 divRoot.append(fragment);
 
-let filterTodo = 'all';
 let todos = [];
 
-function render() {
+function render(arrTodo) {
    todoListContainer.innerHTML = '';
-
-   let arrTodo = todos;
-   if (filterTodo === 'completed') {
-      arrTodo = todos.filter(todo => todo.checked === true)
-   }
-   if (filterTodo === 'search') {
-      arrTodo = todos.filter(todo => { return todo.text.toLowerCase().includes(searchTodo) });
-   }
    arrTodo.forEach(item => {
       const element = createTodoItem(item.text, item.date, item.id);
       if (item.checked) {
@@ -89,35 +80,27 @@ function render() {
 
 }
 
-let maxId = 0;
-for (let i = 0; i < todos.length; i++) {
-   if (todos[i].id > maxId) {
-      maxId = todos[i].id;
-   }
-}
-
-let id = maxId + 1;
 btnAdd.addEventListener('click', () => {
 
    const text = inputEnterTodo.value;
    if (!text) return;
    todos.push({
-      id: id++,
+      id: Date.now(),
       text,
       date: new Date().toLocaleDateString(),
       checked: false,
 
    }
    )
-   render();
+   render(todos);
    inputEnterTodo.value = '';
 
 })
 
 
 btnDeleteAll.addEventListener('click', () => {
-   todos.splice(0, todos.length);
-   render();
+   todos = [];
+   render(todos);
 })
 
 todoListContainer.addEventListener('click', (e) => {
@@ -125,7 +108,7 @@ todoListContainer.addEventListener('click', (e) => {
       const todoBlock = e.target.closest('.todoElement');
       const deleteId = todoBlock.dataset.id;
       todos = todos.filter(todo => todo.id != deleteId)
-      render();
+      render(todos);
    }
 
 });
@@ -142,30 +125,29 @@ todoListContainer.addEventListener('change', (e) => {
 
       });
 
-      render();
+      render(todos);
    }
 });
 
 btnDeleteLast.addEventListener('click', () => {
    todos.pop();
-   render();
+   render(todos);
 });
 
 btnShowAll.addEventListener('click', () => {
-   filterTodo = 'all';
-   render();
+   render(todos);
 });
 
 btnShowCompleted.addEventListener('click', () => {
-   filterTodo = 'completed';
-   render();
+   const showCompletedTodo = todos.filter(todo => todo.checked === true)
+   render(showCompletedTodo);
 
 });
 
 let searchTodo = '';
 inputSearchTodo.addEventListener('input', () => {
-   filterTodo = 'search';
    searchTodo = inputSearchTodo.value.toLowerCase();
-   render();
+   const searchArr = todos.filter(todo => { return todo.text.toLowerCase().includes(searchTodo) });
+   render(searchArr);
 
 });
