@@ -60,7 +60,8 @@ const todoListContainer = createDomElement('div', { className: 'todoListContaine
 fragment.append(managementElements, filterElements, todoListContainer);
 divRoot.append(fragment);
 
-let todos = [];
+const todoKey = 'todos';
+let todos = JSON.parse(localStorage.getItem(todoKey)) || [];
 
 function render(arrTodo) {
    todoListContainer.innerHTML = '';
@@ -78,6 +79,8 @@ function render(arrTodo) {
    allNumber.textContent = todos.length;
    completedNumber.textContent = todos.filter(t => t.checked).length;
 
+   const json = JSON.stringify(todos);
+   localStorage.setItem(todoKey, json);
 }
 
 btnAdd.addEventListener('click', () => {
@@ -151,3 +154,4 @@ inputSearchTodo.addEventListener('input', () => {
    render(searchArr);
 
 });
+render(todos);
