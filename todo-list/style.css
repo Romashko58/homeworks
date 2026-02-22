@@ -173,3 +173,11 @@ body {
    letter-spacing: 0.2px;
    color: #221d1d;
 }
+
+.completed {
+   text-decoration: line-through;
+}
+
+.completedTodo {
+   background-color: #c9bcb3;
+}
