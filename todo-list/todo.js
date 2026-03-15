@@ -60,7 +60,17 @@ const todoListContainer = createDomElement('div', { className: 'todoListContaine
 fragment.append(managementElements, filterElements, todoListContainer);
 divRoot.append(fragment);
 
-let todos = [];
+const todoKey = 'todos';
+const storage = {
+   get() {
+      return JSON.parse(localStorage.getItem(todoKey)) || [];
+   },
+   set(todos) {
+      const json = JSON.stringify(todos);
+      localStorage.setItem(todoKey, json);
+   }
+}
+let todos = storage.get();
 
 function render(arrTodo) {
    todoListContainer.innerHTML = '';
@@ -77,11 +87,9 @@ function render(arrTodo) {
 
    allNumber.textContent = todos.length;
    completedNumber.textContent = todos.filter(t => t.checked).length;
-
 }
 
 btnAdd.addEventListener('click', () => {
-
    const text = inputEnterTodo.value;
    if (!text) return;
    todos.push({
@@ -89,10 +97,10 @@ btnAdd.addEventListener('click', () => {
       text,
       date: new Date().toLocaleDateString(),
       checked: false,
-
    }
    )
    render(todos);
+   storage.set(todos);
    inputEnterTodo.value = '';
 
 })
@@ -101,6 +109,7 @@ btnAdd.addEventListener('click', () => {
 btnDeleteAll.addEventListener('click', () => {
    todos = [];
    render(todos);
+   storage.set(todos);
 })
 
 todoListContainer.addEventListener('click', (e) => {
@@ -109,6 +118,7 @@ todoListContainer.addEventListener('click', (e) => {
       const deleteId = todoBlock.dataset.id;
       todos = todos.filter(todo => todo.id != deleteId)
       render(todos);
+      storage.set(todos);
    }
 
 });
@@ -124,14 +134,15 @@ todoListContainer.addEventListener('change', (e) => {
          }
 
       });
-
       render(todos);
+      storage.set(todos);
    }
 });
 
 btnDeleteLast.addEventListener('click', () => {
    todos.pop();
    render(todos);
+   storage.set(todos);
 });
 
 btnShowAll.addEventListener('click', () => {
@@ -151,3 +162,4 @@ inputSearchTodo.addEventListener('input', () => {
    render(searchArr);
 
 });
+render(todos);
