@@ -1,4 +1,4 @@
-import { createDomElement } from "./utils.js";
+import { createDomElement } from "./dom.utils.js";
 const divRoot = document.getElementById('root');
 const fragment = document.createDocumentFragment();
 const managementElements = createDomElement({ tagName: 'div', atributes: { className: 'enter' } });

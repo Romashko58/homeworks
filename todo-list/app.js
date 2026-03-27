@@ -1,24 +1,7 @@
-import { createTodoItem, todoListContainer, allNumber, completedNumber, btnAdd, inputEnterTodo, btnDeleteAll, btnDeleteLast, btnShowAll, btnShowCompleted, inputSearchTodo } from "./ui.js";
+import { todoListContainer, btnAdd, inputEnterTodo, btnDeleteAll, btnDeleteLast, btnShowAll, btnShowCompleted, inputSearchTodo } from "./ui.js";
 import { storage } from "./storage.js";
-
-let todos = storage.get();
-function render(arrTodo) {
-   todoListContainer.innerHTML = '';
-   const listFragment = document.createDocumentFragment();
-   arrTodo.forEach(item => {
-      const element = createTodoItem(item.text, item.date, item.id);
-      if (item.checked) {
-         element.querySelector('input').checked = true;
-         element.querySelector('.text').classList.add('completed');
-         element.classList.add('completedTodo');
-      }
-      listFragment.append(element);
-   });
-
-   todoListContainer.append(listFragment);
-   allNumber.textContent = todos.length;
-   completedNumber.textContent = todos.filter(t => t.checked).length;
-}
+import { render } from "./dom.utils.js";
+export let todos = storage.get();
 
 btnAdd.addEventListener('click', () => {
    const text = inputEnterTodo.value;
